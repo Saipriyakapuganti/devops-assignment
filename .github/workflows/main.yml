@@ -21,8 +21,24 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      #  ESLint
+      - name: Run ESLint
+        run: npm run lint
+
+      #  Jest + Coverage
+      - name: Run Tests with Coverage
+        run: npm run test:coverage
+
+      #  SonarCloud
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      #  Build
       - name: Run Build
         run: npm run build
 
+      #  Docker
       - name: Build Docker Image
         run: docker build -t devops-app .
