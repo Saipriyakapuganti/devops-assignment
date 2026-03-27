@@ -1,42 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 
-const initialServices = [
-  { name: "Frontend", status: "Running" },
-  { name: "Backend", status: "Running" },
-  { name: "Database", status: "Running" },
-];
-
 function App() {
-  const [services, setServices] = useState(initialServices);
-
-  const refreshStatus = () => {
-    const updated = services.map((service) => ({
-      ...service,
-      status: Math.random() > 0.2 ? "Running" : "Down",
-    }));
-    setServices(updated);
-  };
-
   return (
     <div className="container">
-      <h1>🚀 DevOps Monitoring Dashboard</h1>
+      <h1>🚀 DevOps Pipeline Dashboard</h1>
+      <p className="author">
+        Deployed by: <strong>Sai Priya Kolluru</strong>
+      </p>
 
-      <button onClick={refreshStatus}>Refresh Status</button>
+      <div className="card">
+        <h2>📌 Project Overview</h2>
+        <p className="description">
+          This project demonstrates a complete DevOps pipeline implementation.
+          The application is containerized using Docker and deployed on AWS EC2.
+          CI/CD pipeline is configured using GitHub Actions to automate build,
+          test, and deployment processes. Configuration management is handled
+          using Ansible for efficient provisioning and deployment.
+        </p>
 
-      <div className="grid">
-        {services.map((service, index) => (
-          <div className="card" key={index}>
-            <h2>{service.name}</h2>
-            <p
-              className={
-                service.status === "Running" ? "status up" : "status down"
-              }
-            >
-              {service.status}
-            </p>
-          </div>
-        ))}
+        <h2>⚙️ Tools & Technologies</h2>
+        <ul className="tools">
+          <li>⚡ GitHub Actions - CI/CD Automation</li>
+          <li>🐳 Docker - Containerization</li>
+          <li>☁️ AWS EC2 - Deployment</li>
+          <li>🛠️ Ansible - Configuration Management</li>
+          <li>⚛️ React - Frontend</li>
+        </ul>
+      </div>
+
+      <div className="card">
+        <h2>📊 Services Status</h2>
+
+        <div className="service running">
+          <span>Frontend</span>
+          <span>✅ Running</span>
+        </div>
+
+        <div className="service pending">
+          <span>Backend</span>
+          <span>⏳ Coming Soon</span>
+        </div>
       </div>
     </div>
   );

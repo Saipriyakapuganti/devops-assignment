@@ -1,37 +1,19 @@
-.container {
-  text-align: center;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-button {
-  padding: 10px 20px;
+.description {
+  font-size: 14px;
+  color: #cbd5f5;
   margin-bottom: 20px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  line-height: 1.6;
 }
 
-.grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+.tools {
+  list-style: none;
+  padding: 0;
 }
 
-.card {
-  padding: 20px;
-  width: 150px;
-  border-radius: 10px;
-  background: #f4f4f4;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.up {
-  color: green;
-}
-
-.down {
-  color: red;
+.tools li {
+  background: #334155;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: left;
 }
