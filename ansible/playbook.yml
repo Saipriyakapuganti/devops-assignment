@@ -1,0 +1,25 @@
+- name: Deploy React App using Docker
+  hosts: ec2
+  become: yes
+
+  tasks:
+    - name: Install Docker
+      ansible.builtin.apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Start Docker
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Remove old container
+      ansible.builtin.shell: docker rm -f devops-app-container || true
+
+    - name: Pull image from Docker Hub
+      ansible.builtin.shell: docker pull {{ lookup('env','DOCKER_USERNAME') }}/devops-app:latest
+
+    - name: Run container
+      ansible.builtin.shell: docker run -d -p 80:80 --name devops-app-container {{ lookup('env','DOCKER_USERNAME') }}/devops-app:latest
