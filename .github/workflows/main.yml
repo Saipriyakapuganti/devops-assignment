@@ -66,3 +66,4 @@ jobs:
         run: ansible-playbook -i ansible/inventory.ini ansible/playbook.yml
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          ANSIBLE_HOST_KEY_CHECKING: False
