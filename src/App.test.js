@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders dashboard title', () => {
   render(<App />);
-  const textElement = screen.getByText(/DevOps Monitoring Dashboard/i);
+  const textElement = screen.getByText(/DevOps Pipeline Dashboard/i);
   expect(textElement).toBeInTheDocument();
 });
