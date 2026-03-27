@@ -1,6 +1,6 @@
 ---
 - name: Deploy React App using Docker
-  hosts: ec2
+  hosts: myserver
   become: yes
 
   tasks:
@@ -9,6 +9,7 @@
         name: docker.io
         state: present
         update_cache: yes
+      ignore_errors: yes
 
     - name: Start Docker service
       ansible.builtin.service:
