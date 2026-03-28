@@ -38,7 +38,7 @@ function App() {
         <ul className="tools">
           <li>
             <a
-              href="http://3.87.67.246:3000/d/adrgz4x/webapp-prometheus-dashboard"
+              href="http://3.87.67.246:3000/d/adfjnmc/webapp-prometheus-dashboard"
               target="_blank"
               rel="noopener noreferrer"
             >
