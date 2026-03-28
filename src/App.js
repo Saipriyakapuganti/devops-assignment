@@ -29,18 +29,32 @@ function App() {
         </ul>
       </div>
 
+      {/* New Monitoring Tools Card */}
       <div className="card">
-        <h2>📊 Services Status</h2>
-
-        <div className="service running">
-          <span>Frontend</span>
-          <span>✅ Running</span>
-        </div>
-
-        <div className="service pending">
-          <span>Backend</span>
-          <span>⏳ Coming Soon</span>
-        </div>
+        <h2>📊 Monitoring Tools</h2>
+        <p className="description">
+          This project uses Docker Compose to set up Grafana and Prometheus for monitoring.
+        </p>
+        <ul className="tools">
+          <li>
+            <a
+              href="http://3.87.67.246:3000/d/adrgz4x/webapp-prometheus-dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📈 Grafana Dashboard
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://3.87.67.246:9090"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🧮 Prometheus Metrics
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
